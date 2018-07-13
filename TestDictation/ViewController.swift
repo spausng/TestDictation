@@ -213,7 +213,7 @@ extension ViewController {
         recordFormat.mBytesPerPacket = 2
         recordFormat.mBitsPerChannel = 16
         recordFormat.mReserved = 0
-        recordFormat.mFormatFlags = kLinearPCMFormatFlagIsBigEndian | kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked
+        recordFormat.mFormatFlags = kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked
     }
 }
 
