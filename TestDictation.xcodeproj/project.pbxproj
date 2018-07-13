@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CBF3D8C7637942EDBC39E1B /* Pods_TestDictation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCF5B30857793601C3868B9 /* Pods_TestDictation.framework */; };
 		D894A6BC20F805850077C320 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D894A6BB20F805850077C320 /* AppDelegate.swift */; };
 		D894A6BE20F805850077C320 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D894A6BD20F805850077C320 /* ViewController.swift */; };
 		D894A6C120F805850077C320 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D894A6BF20F805850077C320 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FCF5B30857793601C3868B9 /* Pods_TestDictation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDictation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F6ACF5CE466F6A06B8B0C1 /* Pods-TestDictation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDictation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestDictation/Pods-TestDictation.debug.xcconfig"; sourceTree = "<group>"; };
+		ABE452E679306EC2A6B5CFC5 /* Pods-TestDictation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDictation.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestDictation/Pods-TestDictation.release.xcconfig"; sourceTree = "<group>"; };
 		D894A6B820F805850077C320 /* TestDictation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDictation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D894A6BB20F805850077C320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D894A6BD20F805850077C320 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CBF3D8C7637942EDBC39E1B /* Pods_TestDictation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E573BC0B7FC6C4718540516 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FCF5B30857793601C3868B9 /* Pods_TestDictation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3EEE1B404C423BF107E55B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37F6ACF5CE466F6A06B8B0C1 /* Pods-TestDictation.debug.xcconfig */,
+				ABE452E679306EC2A6B5CFC5 /* Pods-TestDictation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D894A6AF20F805850077C320 = {
 			isa = PBXGroup;
 			children = (
 				D894A6BA20F805850077C320 /* TestDictation */,
 				D894A6B920F805850077C320 /* Products */,
+				D3EEE1B404C423BF107E55B5 /* Pods */,
+				0E573BC0B7FC6C4718540516 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D894A6CA20F805870077C320 /* Build configuration list for PBXNativeTarget "TestDictation" */;
 			buildPhases = (
+				B1CD4FC5AE8CCC5AF446BBF5 /* [CP] Check Pods Manifest.lock */,
 				D894A6B420F805850077C320 /* Sources */,
 				D894A6B520F805850077C320 /* Frameworks */,
 				D894A6B620F805850077C320 /* Resources */,
+				07ADE13052F6CEFCAA886F45 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07ADE13052F6CEFCAA886F45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TestDictation/Pods-TestDictation-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestDictation/Pods-TestDictation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1CD4FC5AE8CCC5AF446BBF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestDictation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D894A6B420F805850077C320 /* Sources */ = {
@@ -278,6 +343,7 @@
 		};
 		D894A6CB20F805870077C320 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37F6ACF5CE466F6A06B8B0C1 /* Pods-TestDictation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +362,7 @@
 		};
 		D894A6CC20F805870077C320 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABE452E679306EC2A6B5CFC5 /* Pods-TestDictation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
