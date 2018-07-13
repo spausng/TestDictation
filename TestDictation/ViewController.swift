@@ -28,6 +28,7 @@ class ViewController: UIViewController {
 
     // MARK: - IB Outlets
     @IBOutlet weak var dictationButton: UIButton!
+    @IBOutlet weak var dictationTextView: UITextView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -229,6 +230,30 @@ extension ViewController: WebSocketDelegate {
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         print("socket \(socket) did receive message: \(text)")
+        var dict: [String: Any]?
+        if let data = text.data(using: .utf8) {
+            do {
+                dict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            }
+            catch {
+                print("error converting JSON to dictionary: \(error)")
+                return
+            }
+        }
+        
+        if let dict = dict {
+            if let data = dict["data"] as? [String: Any] {
+                let kind = data["kind"] as? String
+                let text = data["text"] as? String
+                if kind == "HYPOTHESISTEXT" {
+                    print("text = \(String(describing: text))")
+                    
+                    DispatchQueue.main.async {
+                        self.dictationTextView.text = text
+                    }
+                }
+            }
+        }
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
