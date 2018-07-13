@@ -53,6 +53,7 @@ extension ViewController {
         } else {
             if (startDictation()) {
                 dictationButton.setTitle("Stop Dictation", for: .normal)
+                dictationTextView.text = ""
                 isDictating = true
             }
         }
